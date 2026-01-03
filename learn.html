@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn More - Amrita Jewellers</title>
+<link rel="shorcut icon" type="text/css" href="logo.jpg">
+<style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b8962e;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Golden button */
+.nav-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  border-radius: 25px;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #b8962e;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+  /* General */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fffaf2;
+  color: #333;
+}
+
+/* Hero Section */
+.learn-more-hero {
+  background: #ffffff;
+  padding: 100px 10px;
+  text-align: center;
+  border-bottom: 3px solid #d4af37;
+}
+
+.learn-more-hero h1 {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.learn-more-hero h1 span {
+  color: #d4af37;
+}
+
+.learn-more-hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Content Section */
+.learn-more-content {
+  padding: 60px 10px;
+}
+
+.content-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content-text h2 {
+  font-size: 28px;
+  color: #d4af37;
+  margin-bottom: 12px;
+}
+
+.content-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.content-text ul {
+  list-style: disc inside;
+  margin-bottom: 20px;
+}
+
+.content-text ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Image */
+.content-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.content-image img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(212,175,55,0.2);
+  transition: transform 0.3s;
+}
+
+.content-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content-text h2 {
+    font-size: 24px;
+  }
+  .learn-more-hero h1 {
+    font-size: 32px;
+  }
+  .learn-more-hero p {
+    font-size: 16px;
+  }
+}
+
+.content-text, .content-image {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-in-out;
+}
+
+.content-text.show, .content-image.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section {
+  background: #ffffff;
+  color: #333;
+  border-top: 3px solid #d4af37;
+  padding: 20px 10px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-about h3 span {
+  color: #d4af37;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #d4af37;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #d4af37;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social .social-icon {
+  display: inline-block;
+  background: #fff7e6;
+  color: #d4af37;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.footer-social .social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  transition: transform 0.3s;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-4px);
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo2.jpg" alt="Amrita Jewellers Logo">
+      <span>Amrita Jewellers</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="collection.html">Collections</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-btn">Book Appointment</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+<section class="learn-more-hero">
+  <div class="hero-content">
+    <h1>Learn <span>More</span></h1>
+    <p>Discover the story behind our timeless jewellery and our commitment to excellence.</p>
+  </div>
+</section>
+
+<section class="learn-more-content">
+  <div class="content-container">
+    <div class="content-text">
+      <h2>Our Story</h2>
+      <p>
+        Amrita Jewellers was founded with a vision to craft jewellery that celebrates
+        life’s most precious moments. Every piece is meticulously designed and handcrafted
+        using the finest materials, blending traditional craftsmanship with modern elegance.
+      </p>
+      <p>
+        Our commitment is to bring joy and sophistication to every client. From gold and diamond
+        pieces to bespoke creations, we deliver quality, luxury, and brilliance in every design.
+      </p>
+
+      <h2>Our Values</h2>
+      <ul>
+        <li>Exquisite Craftsmanship</li>
+        <li>Timeless Elegance</li>
+        <li>Customer Satisfaction</li>
+        <li>Innovation and Creativity</li>
+        <li>Ethical Sourcing</li>
+      </ul>
+
+      <h2>Our Mission</h2>
+      <p>
+        To create jewellery that not only adorns but also tells a story—making each moment unforgettable.
+      </p>
+    </div>
+
+    <div class="content-image">
+      <img src="lux.jpg" alt="Luxury Jewellery">
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-about">
+      <h3>Amrita <span>Jewellers</span></h3>
+      <p>Crafting timeless jewellery that celebrates life’s precious moments.<br>Follow us for exquisite designs and special offers.</br></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Our Collection</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="book.html">Book Appointment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📞 +91 9335435541</p>
+      <p>📧 info@amritajewellers.com</p>
+      <p>🏢 Galla Mandi, Kharagpur 208021, Kanpur Nagar</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://emojipedia.org/globe-with-meridians" class="social-icon">🌐</a>
+        <a href="https://www.studley.ai/" class="social-icon">📘</a>
+        <a href="https://picsart.com/photo-editor/" class="social-icon">📸</a>
+        <a href="8318253716" onclick="contactWhatsApp()"class="social-icon">💬</a>
+      </div>
+    </div>
+  </div>
+
+<button onclick="contactWhatsApp()" class="floating-whatsapp">💬 WhatsApp</button>
+</footer>
+<script type="text/javascript">
+
+   function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+  const sections = document.querySelectorAll('.content-text, .content-image');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY + window.innerHeight;
+  sections.forEach(section => {
+    if(scrollTop > section.offsetTop + 100){
+      section.classList.add('show');
+    }
+  });
+});
+
+function contactWhatsApp() {
+  const whatsappNumber = "9335435541";
+  const message = "Hello, I would like to contact Amrita Jewellers!";
+  window.open(`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
+</script>
+</body>
+</html>

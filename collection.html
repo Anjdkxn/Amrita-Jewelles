@@ -1,0 +1,579 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Collection</title>
+  <link rel="shorcut icon" type="text/css" href="logo.jpg">
+	<style type="text/css">
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b8962e;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Golden button */
+.nav-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  border-radius: 25px;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #b8962e;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+		.collection-section {
+  background: #fffaf2;
+  padding: 60px 5%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+.section-header h2 span {
+  color: #d4af37;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Grid */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(212,175,55,0.25);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.card p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Buy Now Button */
+.buy-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.buy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .section-header h2 {
+    font-size: 28px;
+  }
+  .collection-grid {
+    gap: 20px;
+  }
+}
+
+
+.footer-section {
+  background: #ffffff;
+  color: #333;
+  border-top: 3px solid #d4af37;
+  padding: 20px 10px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-about h3 span {
+  color: #d4af37;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #d4af37;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #d4af37;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social .social-icon {
+  display: inline-block;
+  background: #fff7e6;
+  color: #d4af37;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.footer-social .social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  transition: transform 0.3s;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-4px);
+}
+
+
+	</style>
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo2.jpg" alt="Amrita Jewellers Logo">
+      <span>Amrita Jewellers</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="collection.html">Collections</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-btn">Book Appointment</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+<section class="collection-section">
+  <div class="section-header">
+    <h2>Our <span>Collection</span></h2>
+    <p>Explore our exquisite jewellery pieces crafted for timeless elegance.</p>
+  </div>
+
+  <div class="collection-grid">
+    <!-- 20 Grid Cards -->
+    <!-- Replace "jewel1.jpg" with your actual images -->
+    <!-- Each Buy Now button links to WhatsApp with product name -->
+    <div class="card">
+      <img src="neck.jpeg" alt="Jewellery 1">
+      <h3>Gold Necklace</h3>
+      <p>Elegant handcrafted design.</p>
+      <a href="pro1.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dia.webp" alt="Jewellery 2">
+      <h3>Diamond Ring</h3>
+      <p>Shining brilliance for special moments.</p>
+      <a href="pro2.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="brace.jpg" alt="Jewellery 3">
+      <h3>Gold Bracelet</h3>
+      <p>Timeless elegance on your wrist.</p>
+      <a href="pro3.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="stud.jfif" alt="Jewellery 4">
+      <h3>Stud Earrings</h3>
+      <p>Delicate and stylish.</p>
+      <a href="pro4.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pen.jpg" alt="Jewellery 5">
+      <h3>Pendant</h3>
+      <p>Exquisite centerpiece design.</p>
+      <a href="pro5.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="bangle.jpg" alt="Jewellery 6">
+      <h3>Bangle Set</h3>
+      <p>Perfect for traditional look.</p>
+      <a href="pro6.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="ear.jpg" alt="Jewellery 7">
+      <h3>Gold Earrings</h3>
+      <p>Classic yet elegant design.</p>
+      <a href="pro7.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dmn.webp" alt="Jewellery 8">
+      <h3>Diamond Necklace</h3>
+      <p>Luxury with sparkling diamonds.</p>
+      <a href="pro8.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="rings.webp" alt="Jewellery 9">
+      <h3>Ring Set</h3>
+      <p>Elegant rings for every occasion.</p>
+      <a href="pro9.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="ank.webp" alt="Jewellery 10">
+      <h3>Gold Anklet</h3>
+      <p>Traditional and stylish.</p>
+      <a href="pro10.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="cho.webp" alt="Jewellery 11">
+      <h3>Choker Necklace</h3>
+      <p>Royal and modern design.</p>
+      <a href="pro11.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="std.webp" alt="Jewellery 12">
+      <h3>Stud Bracelet</h3>
+      <p>Elegant wrist accessory.</p>
+      <a href="pro12.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pearl.webp" alt="Jewellery 13">
+      <h3>Pearl Necklace</h3>
+      <p>Classic and timeless pearls.</p>
+      <a href="pro13.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="golr.webp" alt="Jewellery 14">
+      <h3>Gold Ring</h3>
+      <p>Stylish ring for everyday wear.</p>
+      <a href="pro14.html"class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="earr.webp" alt="Jewellery 15">
+      <h3>Diamond Earrings</h3>
+      <p>Shimmering diamond studs.</p>
+      <a href="pro15.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pend.avif" alt="Jewellery 16">
+      <h3>Gold Pendant</h3>
+      <p>Elegant golden pendant.</p>
+      <a href="pro16.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pair.webp" alt="Jewellery 17">
+      <h3>Bangle Pair</h3>
+      <p>Luxury bangles for occasions.</p>
+      <a href="pro17.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="std2.webp" alt="Jewellery 18">
+      <h3>Stud Necklace</h3>
+      <p>Elegant necklace with studs.</p>
+      <a href="pro18.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="chain1.jpg" alt="Jewellery 19">
+      <h3>Gold Chain</h3>
+      <p>Simple yet stylish gold chain.</p>
+      <a href="pro19.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dmbr.webp" alt="Jewellery 20">
+      <h3>Diamond Bracelet</h3>
+      <p>Luxury diamond bracelet.</p>
+      <a href="pro20.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-about">
+      <h3>Amrita <span>Jewellers</span></h3>
+      <p>Crafting timeless jewellery that celebrates life’s precious moments. <br>Follow us for exquisite designs and special offers.</br></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Our Collection</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="book.html">Book Appointment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📞 +91 9335435541</p>
+      <p>📧 info@amritajewellers.com</p>
+      <p>🏢 Galla Mandi, Kharagpur 208021, Kanpur Nagar</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://emojipedia.org/globe-with-meridians" class="social-icon">🌐</a>
+        <a href="https://www.studley.ai/" class="social-icon">📘</a>
+        <a href="https://picsart.com/photo-editor/" class="social-icon">📸</a>
+        <a href="8318253716" onclick="contactWhatsApp()"class="social-icon">💬</a>
+      </div>
+    </div>
+  </div>
+
+<button onclick="contactWhatsApp()" class="floating-whatsapp">💬 WhatsApp</button>
+</footer>
+
+<script>
+  function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+ type="text/javascript">
+	function buyNow(productName) {
+  const whatsappNumber = "8318253716"; // Amrita Jewellers WhatsApp
+  const message = `Hi, I want to buy: ${productName}`;
+  const url = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+function contactWhatsApp() {
+  const whatsappNumber = "9335435541";
+  const message = "Hello, I would like to contact Amrita Jewellers!";
+  window.open(`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
+</script>
+</body>
+</html>

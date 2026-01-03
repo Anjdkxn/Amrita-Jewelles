@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Amrita Jewellers</title>
+  <link rel="shorcut icon" type="text/css" href="logo.jpg">
+	<style type="text/css">
+		* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b8962e;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Golden button */
+.nav-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  border-radius: 25px;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #b8962e;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #fffaf2, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 40px;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.hero-content h1 span {
+  color: #d4af37;
+}
+
+.hero-content p {
+  margin: 20px 0 30px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+}
+
+.gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.4);
+}
+
+.outline-btn {
+  border: 2px solid #d4af37;
+  color: #d4af37;
+}
+
+.outline-btn:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Image */
+.hero-image img {
+  width: 620px;
+  max-width: 100%;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+.hero-image img:hover{
+  box-shadow: 13px 15px whitesmoke;
+  transition: 3s;
+}
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image img {
+    width: 300px;
+  }
+}
+
+
+.collection-section {
+  background: #fffaf2;
+  padding: 60px 5%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+.section-header h2 span {
+  color: #d4af37;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Grid */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(212,175,55,0.25);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.card p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Buy Now Button */
+.buy-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.buy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .section-header h2 {
+    font-size: 28px;
+  }
+  .collection-grid {
+    gap: 20px;
+  }
+}
+
+
+
+.about-section {
+  background: #fffaf2;
+  padding: 80px 5%;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: #d4af37;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-text .btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Gold Button */
+.gold-btn {
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+}
+
+.gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* Image */
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(212,175,55,0.2);
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media(max-width: 900px){
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 30px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+}
+
+
+
+.contact-section {
+  background: #fffaf2;
+  padding: 60px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #ffffff;
+  max-width: 450px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-card h2 span {
+  color: #d4af37;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.contact-card input,
+.contact-card textarea,
+.contact-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #d4af37;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Phone Box Flex */
+.phone-box {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-box select {
+  width: 35%;
+  cursor: pointer;
+  background: #fff7e6;
+  color: #b8962e;
+  border: 1px solid #d4af37;
+  font-weight: 600;
+}
+
+.phone-box input {
+  width: 65%;
+}
+
+/* Textarea */
+.contact-card textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* Button */
+.whatsapp-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #f5d76e, #d4af37);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.footer-text {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .phone-box {
+    flex-direction: column;
+  }
+  .phone-box select,
+  .phone-box input {
+    width: 100%;
+  }
+}
+
+
+.appointment-section {
+  background: #fffaf2;
+  padding: 60px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-card {
+  background: #ffffff;
+  max-width: 600px;
+  width: 100%;
+  padding: 35px 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.appointment-card h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.appointment-card h2 span {
+  color: #d4af37;
+}
+
+.appointment-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.appointment-card input[type="text"],
+.appointment-card input[type="tel"],
+.appointment-card textarea,
+.appointment-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #d4af37;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Phone Box Flex */
+.phone-box {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-box select {
+  width: 35%;
+  cursor: pointer;
+  background: #fff7e6;
+  color: #b8962e;
+  border: 1px solid #d4af37;
+  font-weight: 600;
+}
+
+.phone-box input {
+  width: 65%;
+}
+
+/* Textarea */
+.appointment-card textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* Jewellery Item Grid */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.item-card {
+  background: #fff7e6;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.item-card input[type="checkbox"] {
+  display: none;
+}
+
+.item-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.item-card span {
+  display: block;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Checked item highlight */
+.item-card input[type="checkbox"]:checked + img + span {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #f5d76e, #d4af37);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.footer-text {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .phone-box {
+    flex-direction: column;
+  }
+  .phone-box select,
+  .phone-box input {
+    width: 100%;
+  }
+}
+
+
+.footer-section {
+  background: #ffffff;
+  color: #333;
+  border-top: 3px solid #d4af37;
+  padding: 20px 10px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-about h3 span {
+  color: #d4af37;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #d4af37;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #d4af37;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social .social-icon {
+  display: inline-block;
+  background: #fff7e6;
+  color: #d4af37;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.footer-social .social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  transition: transform 0.3s;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-4px);
+}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo2.jpg" alt="Amrita Jewellers Logo">
+      <span>Amrita Jewellers</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="collection.html">Collections</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book.html" class="nav-btn">Book Appointment</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Timeless Elegance in<br>
+      <span>Every Jewel</span>
+    </h1>
+
+    <p>
+      Discover exquisite gold and diamond jewellery crafted to celebrate
+      your most precious moments with unmatched brilliance and purity.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="collection.html" class="btn gold-btn">Explore Collection</a>
+      <a href="book.html" class="btn outline-btn">Book Appointment</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="hero.jpg" alt="Amrita Jewellers">
+  </div>
+</section>
+
+
+<section class="collection-section">
+  <div class="section-header">
+    <h2>Our <span>Collection</span></h2>
+    <p>Explore our exquisite jewellery pieces crafted for timeless elegance.</p>
+  </div>
+
+  <div class="collection-grid">
+    <!-- 20 Grid Cards -->
+    <!-- Replace "jewel1.jpg" with your actual images -->
+    <!-- Each Buy Now button links to WhatsApp with product name -->
+    <div class="card">
+      <img src="neck.jpeg" alt="Jewellery 1">
+      <h3>Gold Necklace</h3>
+      <p>Elegant handcrafted design.</p>
+      <a href="pro1.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dia.webp" alt="Jewellery 2">
+      <h3>Diamond Ring</h3>
+      <p>Shining brilliance for special moments.</p>
+      <a href="pro2.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="brace.jpg" alt="Jewellery 3">
+      <h3>Gold Bracelet</h3>
+      <p>Timeless elegance on your wrist.</p>
+      <a href="pro3.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="stud.jfif" alt="Jewellery 4">
+      <h3>Stud Earrings</h3>
+      <p>Delicate and stylish.</p>
+      <a href="pro4.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pen.jpg" alt="Jewellery 5">
+      <h3>Pendant</h3>
+      <p>Exquisite centerpiece design.</p>
+      <a href="pro5.html"  class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="bangle.jpg" alt="Jewellery 6">
+      <h3>Bangle Set</h3>
+      <p>Perfect for traditional look.</p>
+      <a href="pro6.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="ear.jpg" alt="Jewellery 7">
+      <h3>Gold Earrings</h3>
+      <p>Classic yet elegant design.</p>
+      <a href="pro7.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dmn.webp" alt="Jewellery 8">
+      <h3>Diamond Necklace</h3>
+      <p>Luxury with sparkling diamonds.</p>
+      <a href="pro8.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="rings.webp" alt="Jewellery 9">
+      <h3>Ring Set</h3>
+      <p>Elegant rings for every occasion.</p>
+      <a href="pro9.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="ank.webp" alt="Jewellery 10">
+      <h3>Gold Anklet</h3>
+      <p>Traditional and stylish.</p>
+      <a href="pro10.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="cho.webp" alt="Jewellery 11">
+      <h3>Choker Necklace</h3>
+      <p>Royal and modern design.</p>
+      <a href="pro11.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="std.webp" alt="Jewellery 12">
+      <h3>Stud Bracelet</h3>
+      <p>Elegant wrist accessory.</p>
+      <a href="pro12.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pearl.webp" alt="Jewellery 13">
+      <h3>Pearl Necklace</h3>
+      <p>Classic and timeless pearls.</p>
+      <a href="pro13.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="golr.webp" alt="Jewellery 14">
+      <h3>Gold Ring</h3>
+      <p>Stylish ring for everyday wear.</p>
+      <a href="pro14.html"class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="earr.webp" alt="Jewellery 15">
+      <h3>Diamond Earrings</h3>
+      <p>Shimmering diamond studs.</p>
+      <a href="pro15.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pend.avif" alt="Jewellery 16">
+      <h3>Gold Pendant</h3>
+      <p>Elegant golden pendant.</p>
+      <a href="pro16.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="pair.webp" alt="Jewellery 17">
+      <h3>Bangle Pair</h3>
+      <p>Luxury bangles for occasions.</p>
+      <a href="pro17.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="std2.webp" alt="Jewellery 18">
+      <h3>Stud Necklace</h3>
+      <p>Elegant necklace with studs.</p>
+      <a href="pro18.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="chain1.jpg" alt="Jewellery 19">
+      <h3>Gold Chain</h3>
+      <p>Simple yet stylish gold chain.</p>
+      <a href="pro19.html" class="buy-btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <img src="dmbr.webp" alt="Jewellery 20">
+      <h3>Diamond Bracelet</h3>
+      <p>Luxury diamond bracelet.</p>
+      <a href="pro20.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-section">
+  <div class="about-container">
+    <!-- Text Content -->
+    <div class="about-text">
+      <h2>About <span>Us</span></h2>
+      <p>
+        At Amrita Jewellers, we craft timeless jewellery that celebrates life's
+        most precious moments. With a commitment to excellence, every piece
+        is meticulously designed and handcrafted to ensure elegance, purity,
+        and lasting beauty.
+      </p>
+      <p>
+        Our mission is to bring joy and sophistication to every client, blending
+        traditional craftsmanship with modern design. From gold and diamond pieces
+        to exclusive bespoke collections, we promise unmatched quality and brilliance.
+      </p>
+      <a href="learn.html" class="btn gold-btn">Learn More</a>
+    </div>
+
+    <!-- Image Content -->
+    <div class="about-image">
+      <img src="shop.jpg" alt="Amrita Jewellers">
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-card">
+    <h2>Contact <span>Us</span></h2>
+    <p>
+      Have questions or want to book an appointment? Reach out to Amrita Jewellers.
+      We’d love to hear from you!
+    </p>
+
+    <input type="text" id="name" placeholder="Your Name">
+
+    <!-- Country Code + Mobile Input -->
+    <div class="phone-box">
+      <select id="countryCode">
+        <option value="+91" selected>🇮🇳 +91 India</option>
+        <option value="+1">🇺🇸 +1 USA</option>
+        <option value="+44">🇬🇧 +44 UK</option>
+        <option value="+61">🇦🇺 +61 Australia</option>
+        <option value="+81">🇯🇵 +81 Japan</option>
+        <option value="+49">🇩🇪 +49 Germany</option>
+        <option value="+33">🇫🇷 +33 France</option>
+        <option value="+86">🇨🇳 +86 China</option>
+        <option value="+55">🇧🇷 +55 Brazil</option>
+        <option value="+27">🇿🇦 +27 South Africa</option>
+        <option value="+39">🇮🇹 +39 Italy</option>
+        <option value="+7">🇷🇺 +7 Russia</option>
+        <option value="+34">🇪🇸 +34 Spain</option>
+        <option value="+46">🇸🇪 +46 Sweden</option>
+        <option value="+41">🇨🇭 +41 Switzerland</option>
+        <option value="+31">🇳🇱 +31 Netherlands</option>
+        <option value="+64">🇳🇿 +64 New Zealand</option>
+        <option value="+82">🇰🇷 +82 South Korea</option>
+        <option value="+65">🇸🇬 +65 Singapore</option>
+        <option value="+60">🇲🇾 +60 Malaysia</option>
+        <!-- Add more countries as needed -->
+      </select>
+      <input type="tel" id="phone" placeholder="Your Mobile Number">
+    </div>
+
+    <textarea id="message" placeholder="Your Message"></textarea>
+
+    <button class="whatsapp-btn" onclick="sendWhatsApp()">
+      Send WhatsApp Message
+    </button>
+
+    <div class="footer-text">
+      We respond quickly on WhatsApp 💛
+    </div>
+  </div>
+</section>
+
+
+<section class="appointment-section">
+  <div class="appointment-card">
+    <h2>Book <span>Appointment</span></h2>
+    <p>Schedule your exclusive visit and select the jewellery you’re interested in. We’ll make your experience unforgettable.</p>
+
+    <input type="text" id="apptName" placeholder="Your Name">
+
+    <!-- Country Code + Mobile -->
+    <div class="phone-box">
+      <select id="apptCountryCode">
+        <option value="+91" selected>🇮🇳 +91 India</option>
+        <option value="+1">🇺🇸 +1 USA</option>
+        <option value="+44">🇬🇧 +44 UK</option>
+        <option value="+61">🇦🇺 +61 Australia</option>
+        <option value="+81">🇯🇵 +81 Japan</option>
+        <option value="+49">🇩🇪 +49 Germany</option>
+        <option value="+33">🇫🇷 +33 France</option>
+        <option value="+86">🇨🇳 +86 China</option>
+        <option value="+55">🇧🇷 +55 Brazil</option>
+        <option value="+27">🇿🇦 +27 South Africa</option>
+        <option value="+39">🇮🇹 +39 Italy</option>
+        <option value="+7">🇷🇺 +7 Russia</option>
+        <option value="+34">🇪🇸 +34 Spain</option>
+        <option value="+46">🇸🇪 +46 Sweden</option>
+        <option value="+41">🇨🇭 +41 Switzerland</option>
+        <option value="+31">🇳🇱 +31 Netherlands</option>
+        <option value="+64">🇳🇿 +64 New Zealand</option>
+        <option value="+82">🇰🇷 +82 South Korea</option>
+        <option value="+65">🇸🇬 +65 Singapore</option>
+        <option value="+60">🇲🇾 +60 Malaysia</option>
+      </select>
+      <input type="tel" id="apptPhone" placeholder="Your Mobile Number">
+    </div>
+
+    <textarea id="apptMessage" placeholder="Your Message"></textarea>
+
+    <!-- Jewellery Items Grid -->
+    <div class="item-grid">
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Gold Necklace">
+        <img src="neck.jpeg" alt="Gold Necklace">
+        <span>Gold Necklace</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Diamond Ring">
+        <img src="dia.webp" alt="Diamond Ring">
+        <span>Diamond Ring</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Gold Bracelet">
+        <img src="brace.jpg" alt="Gold Bracelet">
+        <span>Gold Bracelet</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Stud Earrings">
+        <img src="earr.webp" alt="Stud Earrings">
+        <span>Stud Earrings</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Pendant">
+        <img src="pen.jpg" alt="Pendant">
+        <span>Pendant</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Gold Ring">
+        <img src="golr.webp" alt="Pendant">
+        <span>Gold Ring</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Gold Chain">
+        <img src="chain1.jpg" alt="Pendant">
+        <span>Gold Chain</span>
+      </label>
+      <label class="item-card">
+        <input type="checkbox" name="jewelleryItem" value="Ring Set">
+        <img src="rings.webp" alt="Pendant">
+        <span>Ring Set</span>
+      </label>
+      <!-- Add more items as needed -->
+    </div>
+
+    <button class="whatsapp-btn" onclick="sendAppointmentWhatsApp()">
+      Send WhatsApp Message
+    </button>
+
+    <div class="footer-text">
+      We respond quickly on WhatsApp 💛
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-about">
+      <h3>Amrita <span>Jewellers</span></h3>
+      <p>Crafting timeless jewellery that celebrates life’s precious moments.
+      <br> Follow us for exquisite designs and special offers.</br></p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Our Collection</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="book.html">Book Appointment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📞 +91 9335435541</p>
+      <p>📧 info@amritajewellers.com</p>
+      <p>🏢 Galla Mandi, Kharagpur 208021, Kanpur Nagar</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://emojipedia.org/globe-with-meridians" class="social-icon">🌐</a>
+        <a href="https://www.studley.ai/" class="social-icon">📘</a>
+        <a href="https://picsart.com/photo-editor/" class="social-icon">📸</a>
+        <a href="8318253716" onclick="contactWhatsApp()"class="social-icon">💬</a>
+      </div>
+    </div>
+  </div>
+
+<button onclick="contactWhatsApp()" class="floating-whatsapp">💬 WhatsApp</button>
+  
+</footer>
+
+<script type="text/javascript">
+	
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+window.addEventListener("load", () => {
+  document.querySelector(".hero").classList.add("show");
+});
+
+function buyNow(productName) {
+  const whatsappNumber = "9335435541"; // Amrita Jewellers WhatsApp
+  const message = `Hi, I want to buy: ${productName}`;
+  const url = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+
+
+window.addEventListener("scroll", () => {
+  const about = document.querySelector(".about-section");
+  const top = about.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if(top < screenHeight - 100){
+    about.classList.add("show");
+  }
+});
+
+
+
+function sendWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const countryCode = document.getElementById("countryCode").value;
+  const messageText = document.getElementById("message").value.trim();
+
+  if(!name || !phone || !messageText){
+    alert("Please fill all fields");
+    return;
+  }
+
+  const message = `Name: ${name}%0APhone: ${countryCode}${phone}%0AMessage: ${messageText}`;
+  const whatsappNumber = "9335435541"; // Amrita Jewellers number
+
+  window.open(`https://wa.me/91${whatsappNumber}?text=${message}`, "_blank");
+}
+
+
+function sendAppointmentWhatsApp() {
+  const name = document.getElementById("apptName").value.trim();
+  const phone = document.getElementById("apptPhone").value.trim();
+  const countryCode = document.getElementById("apptCountryCode").value;
+  const messageText = document.getElementById("apptMessage").value.trim();
+
+  // Get selected jewellery items
+  const items = Array.from(document.querySelectorAll('input[name="jewelleryItem"]:checked'))
+                     .map(i => i.value)
+                     .join(", ");
+
+  if (!name || !phone || !messageText) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const fullMessage = `Name: ${name}%0APhone: ${countryCode}${phone}%0AMessage: ${messageText}%0ASelected Items: ${items || "None"}`;
+
+  const whatsappNumber = "9335435541"; // Amrita Jewellers number
+  window.open(`https://wa.me/91${whatsappNumber}?text=${fullMessage}`, "_blank");
+}
+
+
+function contactWhatsApp() {
+  const whatsappNumber = "9335435541";
+  const message = "Hello, I would like to contact Amrita Jewellers!";
+  window.open(`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
+</script>
+</body>
+</html>
